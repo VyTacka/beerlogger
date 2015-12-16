@@ -1,0 +1,24 @@
+<!-- Drop Zone -->
+<div class="dropzone"
+     ngf-drop="vm.uploadFile($file)"
+     ngf-drag-over-class="vm.dragOverClass($event)"
+     ng-model="file"
+     ng-multiple="false"
+     ngf-select="vm.uploadFile($file)">
+    Drop image here or click to upload
+</div>
+
+<!-- Progress Bar -->
+<uib-progressbar
+        ng-show="vm.progress.visible"
+        class="progress-striped active"
+        value="vm.progress.value"
+        type="{{ vm.progress.type }}">
+</uib-progressbar>
+
+<!-- Preview -->
+<div class="preview">
+    <h5>{{vm.file.name}}</h5>
+    <p class="text-error" ng-show="vm.f.$error || vm.f.$errorParam">{{vm.f.$error}} {{vm.f.$errorParam}}</p>
+    <img ngf-src="file.result.url || file" width="280">
+</div>

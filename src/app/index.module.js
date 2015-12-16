@@ -10,11 +10,13 @@
                 'ngSanitize',
                 'ngMessages',
                 'ngAria',
-                'ngResource',
+                'restangular',
                 'ui.router',
                 'ui.bootstrap',
                 'toastr',
-                'oauth'
+                'oauth',
+                'ngFileUpload',
+                'angular.filter'
             ]
         );
 

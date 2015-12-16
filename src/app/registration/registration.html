@@ -1,0 +1,39 @@
+<form class="form-horizontal" ng-submit="vm.save()" xmlns="http://www.w3.org/1999/html">
+    <bs-input
+            label="Username"
+            placeholder="Username"
+            name="username"
+            type="text"
+            value="vm.entity.username"
+            errors="vm.errors.username.errors">
+    </bs-input>
+    <bs-input
+            label="Email"
+            placeholder="Email"
+            name="email"
+            type="email"
+            value="vm.entity.email"
+            errors="vm.errors.email.errors">
+    </bs-input>
+    <bs-input
+            label="Password"
+            placeholder="Password"
+            name="plainPassword.first"
+            type="password"
+            value="vm.entity.plainPassword.first"
+            errors="vm.errors.plainPassword.first.errors">
+    </bs-input>
+    <bs-input
+            label="Repeat password"
+            placeholder="Repeat password"
+            name="plainPassword.second"
+            type="password"
+            value="vm.entity.plainPassword.second"
+            errors="vm.errors.plainPassword.second.errors">
+    </bs-input>
+    <div class="form-group">
+        <div class="col-sm-12 text-right">
+            <button type="submit" class="btn btn-primary">Confirm</button>
+        </div>
+    </div>
+</form>

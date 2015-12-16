@@ -1,21 +1,35 @@
-<nav class="navbar navbar-static-top navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
-        <span class="glyphicon glyphicon-home"></span> Gulp Angular
-      </a>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home">BeerLogger</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+                <li ui-sref-active="active" ng-show="vm.logged"><a ui-sref="drink">Drinks</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <button
+                            ui-sref="registration"
+                            ng-show="!vm.logged"
+                            class="btn btn-default navbar-btn">Sign Up</button>
+                    <oauth
+                            site="http://backend.restapi.dev"
+                            client-id="1_5qejn38rtukggw4w4ko0sk0okcgsk4c4s0g0cc8c40wcok0w4g"
+                            redirect-uri="http://localhost:3000"
+                            profile-uri="http://backend.restapi.dev/api/user"
+                            authorize-path="/oauth/v2/auth">
+                    </oauth>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-      <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#">About</a></li>
-        <li><a ng-href="#">Contact</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right acme-navbar-text">
-        <li>Application was created {{ vm.relativeDate }}.</li>
-      </ul>
-    </div>
-  </div>
 </nav>

@@ -1,0 +1,17 @@
+.dropzone {
+  margin-bottom: 20px;
+  border: 2px dashed $input-border;
+  padding: 100px 0;
+  color: $gray-light;
+  text-align: center;
+}
+
+.dropzone-dragover {
+  border-color: $brand-primary;
+  color: $gray-lighter;
+}
+
+.dropzone-dragover-err {
+  border-color: $alert-danger-text;
+  color: $alert-danger-text;
+}

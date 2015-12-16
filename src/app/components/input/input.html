@@ -1,0 +1,7 @@
+<div class="form-group" ng-class="{ 'has-error' : vm.errors }">
+    <label for="input_{{ vm.name | replace: '.': '_' }}" class="col-sm-2 control-label">{{ vm.label }}</label>
+    <div class="col-sm-10">
+        <input type="{{ vm.type }}" class="form-control" id="input_{{ vm.name | replace: '.': '_' }}" ng-model="vm.value" placeholder="{{ vm.placeholder }}">
+        <span class="help-block" ng-show="vm.errors">{{ vm.errors | join:'&lt;br&gt;' }}</span>
+    </div>
+</div>

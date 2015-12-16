@@ -3,10 +3,10 @@
 
     angular
         .module('beerLoggerApp')
-        .controller('MainController', MainController);
+        .factory('Drink', Drink);
 
     /** @ngInject */
-    function MainController() {
-        var vm = this;
+    function Drink(Restangular) {
+        return Restangular.service('drinks')
     }
 })();

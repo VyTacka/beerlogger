@@ -1,21 +1,33 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('beerLoggerApp')
-    .config(routerConfig);
+    angular
+        .module('beerLoggerApp')
+        .config(routerConfig);
 
-  /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      });
+    /** @ngInject */
+    function routerConfig($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: 'app/main/main.html',
+                controller: 'MainController',
+                controllerAs: 'vm'
+            })
+            .state('drink', {
+                url: '/drink',
+                templateUrl: 'app/drink/drink.html',
+                controller: 'DrinkController',
+                controllerAs: 'vm'
+            })
+            .state('registration', {
+                url: '/registration',
+                templateUrl: 'app/registration/registration.html',
+                controller: 'RegistrationController',
+                controllerAs: 'vm'
+            });
 
-    $urlRouterProvider.otherwise('/');
-  }
+        $urlRouterProvider.otherwise('/');
+    }
 
 })();
