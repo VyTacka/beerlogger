@@ -1,0 +1,77 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add Drink</h3>
+</div>
+<div class="modal-body">
+    <form name="drinkForm" class="form-horizontal" ng-submit="vm.submit()" xmlns="http://www.w3.org/1999/html">
+        <bs-input
+                label="Name"
+                placeholder="Name"
+                name="name"
+                type="text"
+                required="true"
+                value="vm.entity.name"
+                errors="vm.errors.name.errors">
+        </bs-input>
+        <bs-input
+                label="Packaging Capacity"
+                placeholder="Packaging Capacity"
+                name="packagingCapacity"
+                type="number"
+                required="true"
+                value="vm.entity.packagingCapacity"
+                errors="vm.errors.packagingCapacity.errors">
+        </bs-input>
+        <bs-input
+                label="Packaging Amount"
+                placeholder="Packaging Amount"
+                name="packagingAmount"
+                type="number"
+                required="true"
+                value="vm.entity.packagingAmount"
+                errors="vm.errors.packagingAmount.errors">
+        </bs-input>
+        <bs-input
+                label="Packaging Price"
+                placeholder="Packaging Price"
+                name="packagingPrice"
+                type="number"
+                required="true"
+                value="vm.entity.packagingPrice"
+                errors="vm.errors.packagingPrice.errors">
+        </bs-input>
+        <bs-input
+                label="Alc. Volume"
+                placeholder="Alc. Volume"
+                name="alcVol"
+                type="number"
+                required="true"
+                value="vm.entity.alcVol"
+                errors="vm.errors.alcVol.errors">
+        </bs-input>
+        <div class="form-group" ng-class="{ 'has-error' : vm.errors.rating.errors }">
+            <label for="input_rating" class="col-sm-3 control-label"></label>
+            <div class="col-sm-9">
+                <input id="input_rating" type="hidden" ng-required="true">
+                <uib-rating ng-model="vm.entity.rating" max="10" on-hover="vm.rating.hoveringOver(value)" on-leave="vm.rating.overStar = null" aria-labelledby="default-rating"></uib-rating>
+                <span class="label" ng-class="{'label-warning': vm.rating.percent<30, 'label-info': vm.rating.percent>=30 && vm.rating.percent<70, 'label-success': vm.rating.percent>=70}" ng-show="vm.rating.overStar">{{vm.rating.percent}}%</span>
+                <span class="help-block" ng-show="vm.errors.rating.errors">{{ vm.errors.rating.errors | join:'&lt;br&gt;' }}</span>
+            </div>
+        </div>
+        <bs-textarea
+                label="Note"
+                placeholder="Note"
+                name="note"
+                required="true"
+                value="vm.entity.note"
+                errors="vm.errors.note.errors">
+        </bs-textarea>
+
+        <dropzone value="vm.entity.image"></dropzone>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.submit()">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>
+
+

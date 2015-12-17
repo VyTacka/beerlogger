@@ -1,3 +1,5 @@
+<input type="hidden" ng-model="vm.value">
+
 <!-- Drop Zone -->
 <div class="dropzone"
      ngf-drop="vm.uploadFile($file)"
@@ -18,7 +20,7 @@
 
 <!-- Preview -->
 <div class="preview">
-    <h5>{{vm.file.name}}</h5>
+    <h5>{{ vm.file.name }}</h5>
     <p class="text-error" ng-show="vm.f.$error || vm.f.$errorParam">{{vm.f.$error}} {{vm.f.$errorParam}}</p>
     <img ngf-src="file.result.url || file" width="280">
 </div>

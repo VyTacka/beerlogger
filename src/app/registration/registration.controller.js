@@ -11,14 +11,14 @@
 
         $log.debug(vm.entity);
 
-        vm.save = function () {
+        vm.submit = function () {
             vm.errors = {};
 
             Token.get().then(
                 function (response) {
-                    User.post({fos_user_registration: vm.entity}, {access_token: response.access_token}).then(
+                    User.post({fos_user_registration: vm.entity}, {access_token: response.plain().access_token}).then(
                         function (response) {
-                            $log.debug('true', response);
+                            $log.debug('true', response.plain());
                         },
                         function (error) {
                             if (typeof error.data !== 'undefined') {

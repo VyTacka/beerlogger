@@ -1,0 +1,98 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{ vm.drink.name }}</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img ng-src="{{ vm.drink.image }}" alt="{{ vm.drink.name }}">
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-9">
+            <dl class="dl-horizontal">
+                <dt>Created At</dt>
+                <dd>{{ vm.drink.created_at | date }}</dd>
+                <dt>Packaging Amount</dt>
+                <dd>{{ vm.drink.packaging_amount }}</dd>
+                <dt>Packaging Capacity</dt>
+                <dd>{{ vm.drink.packaging_capacity }}</dd>
+                <dt>Packaging Price</dt>
+                <dd>{{ vm.drink.packaging_price }}</dd>
+                <dt>Rating</dt>
+                <dd><uib-rating ng-model="vm.drink.rating" max="10" readonly="true" aria-labelledby="default-rating"></uib-rating></dd>
+                <dt>Note</dt>
+                <dd>{{ vm.drink.note }}</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!--<bs-input-->
+            <!--label="Name"-->
+            <!--placeholder="Name"-->
+            <!--name="name"-->
+            <!--type="text"-->
+            <!--required="true"-->
+            <!--value="vm.entity.name"-->
+            <!--errors="vm.errors.name.errors">-->
+    <!--</bs-input>-->
+    <!--<bs-input-->
+            <!--label="Packaging Capacity"-->
+            <!--placeholder="Packaging Capacity"-->
+            <!--name="packagingCapacity"-->
+            <!--type="number"-->
+            <!--required="true"-->
+            <!--value="vm.entity.packagingCapacity"-->
+            <!--errors="vm.errors.packagingCapacity.errors">-->
+    <!--</bs-input>-->
+    <!--<bs-input-->
+            <!--label="Packaging Amount"-->
+            <!--placeholder="Packaging Amount"-->
+            <!--name="packagingAmount"-->
+            <!--type="number"-->
+            <!--required="true"-->
+            <!--value="vm.entity.packagingAmount"-->
+            <!--errors="vm.errors.packagingAmount.errors">-->
+    <!--</bs-input>-->
+    <!--<bs-input-->
+            <!--label="Packaging Price"-->
+            <!--placeholder="Packaging Price"-->
+            <!--name="packagingPrice"-->
+            <!--type="number"-->
+            <!--required="true"-->
+            <!--value="vm.entity.packagingPrice"-->
+            <!--errors="vm.errors.packagingPrice.errors">-->
+    <!--</bs-input>-->
+    <!--<bs-input-->
+            <!--label="Alc. Volume"-->
+            <!--placeholder="Alc. Volume"-->
+            <!--name="alcVol"-->
+            <!--type="number"-->
+            <!--required="true"-->
+            <!--value="vm.entity.alcVol"-->
+            <!--errors="vm.errors.alcVol.errors">-->
+    <!--</bs-input>-->
+    <!--<bs-input-->
+            <!--label="Rating"-->
+            <!--placeholder="Rating"-->
+            <!--name="rating"-->
+            <!--type="text"-->
+            <!--required="true"-->
+            <!--value="vm.entity.rating"-->
+            <!--errors="vm.errors.rating.errors">-->
+    <!--</bs-input>-->
+    <!--&lt;!&ndash;<uib-rating ng-model="rate" max="vm.rating.max" on-hover="vm.rating.hoveringOver(value)" on-leave="vm.rating.overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>&ndash;&gt;-->
+    <!--&lt;!&ndash;<span class="label" ng-class="{'label-warning': vm.rating.percent<30, 'label-info': vm.rating.percent>=30 && vm.rating.percent<70, 'label-success': vm.rating.percent>=70}" ng-show="overStar">{{percent}}%</span>&ndash;&gt;-->
+    <!--<bs-textarea-->
+            <!--label="Note"-->
+            <!--placeholder="Note"-->
+            <!--name="note"-->
+            <!--required="true"-->
+            <!--value="vm.entity.note"-->
+            <!--errors="vm.errors.note.errors">-->
+    <!--</bs-textarea>-->
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.close()">Close</button>
+</div>
+
+

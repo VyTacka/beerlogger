@@ -13,7 +13,6 @@
                 'restangular',
                 'ui.router',
                 'ui.bootstrap',
-                'toastr',
                 'oauth',
                 'ngFileUpload',
                 'angular.filter'

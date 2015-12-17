@@ -10,6 +10,9 @@
         var directive = {
             restrict: 'E',
             templateUrl: 'app/components/dropzone/dropzone.html',
+            scope: {
+                value: '='
+            },
             controller: DropzoneController,
             controllerAs: 'vm',
             bindToController: true
@@ -18,7 +21,7 @@
         return directive;
 
         /** @ngInject */
-        function DropzoneController(Upload) {
+        function DropzoneController(Upload, $log) {
             var vm = this;
 
             /* Uploading with Angular File Upload */
@@ -63,6 +66,8 @@
                     }).success(function (data) {
                         data.context = {custom: {photo: vm.title}};
                         file.result = data;
+                        vm.value = data.url;
+                        $log.debug(data);
                         file.status = "Done!";
                     }).error(function (data) {
                         file.result = data;

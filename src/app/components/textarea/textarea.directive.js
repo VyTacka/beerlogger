@@ -14,6 +14,7 @@
                 name: '@',
                 label: '@',
                 placeholder: '@',
+                required: '@',
                 value: '=',
                 errors: '='
             },
