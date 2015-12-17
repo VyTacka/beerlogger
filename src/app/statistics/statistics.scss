@@ -1,0 +1,8 @@
+
+.statistics-item {
+  padding: 10px 15px;
+
+  &:nth-child(even) {
+    background-color: $gray-lighter;
+  }
+}

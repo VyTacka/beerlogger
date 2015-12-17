@@ -1,0 +1,6 @@
+<ul class="list-unstyled">
+    <li class="statistics-item" ng-repeat="statistic in vm.statistics">
+        <h3 class="text-center">{{ statistic.title }}</h3>
+        <h1 class="text-primary text-center" ng-bind-html="statistic.value"></h1>
+    </li>
+</ul>

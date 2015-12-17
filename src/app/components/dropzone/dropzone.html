@@ -19,8 +19,14 @@
 </uib-progressbar>
 
 <!-- Preview -->
-<div class="preview">
-    <h5>{{ vm.file.name }}</h5>
-    <p class="text-error" ng-show="vm.f.$error || vm.f.$errorParam">{{vm.f.$error}} {{vm.f.$errorParam}}</p>
-    <img ngf-src="file.result.url || file" width="280">
+<div class="preview" ng-show="file">
+    <div class="row">
+        <div class="col-xs-6 col-sm-3">
+            <p><strong>{{ vm.file.name }}</strong></p>
+            <p class="text-error" ng-show="vm.f.$error || vm.f.$errorParam">{{vm.f.$error}} {{vm.f.$errorParam}}</p>
+            <div class="thumbnail">
+                <img ngf-src="file.result.url || file">
+            </div>
+        </div>
+    </div>
 </div>

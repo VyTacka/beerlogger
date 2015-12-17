@@ -22,7 +22,7 @@
         return directive;
 
         /** @ngInject */
-        function DropzoneController(Upload, $log) {
+        function DropzoneController(Upload) {
             var vm = this;
 
             /* Uploading with Angular File Upload */
@@ -68,8 +68,8 @@
                         data.context = {custom: {photo: vm.title}};
                         file.result = data;
                         vm.value = data.url;
-                        $log.debug(data);
                         file.status = "Done!";
+                        vm.progress.visible = false;
                     }).error(function (data) {
                         file.result = data;
                         file.status = "Error!";

@@ -6,7 +6,7 @@
         .controller('ShowDrinkController', ShowDrinkController);
 
     /** @ngInject */
-    function ShowDrinkController($rootScope, $uibModalInstance, drink) {
+    function ShowDrinkController($uibModalInstance, drink) {
         var vm = this;
 
         vm.drink = drink;

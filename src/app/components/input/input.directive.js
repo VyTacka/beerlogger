@@ -16,6 +16,7 @@
                 label: '@',
                 placeholder: '@',
                 required: '@',
+                addon: '@',
                 value: '=',
                 errors: '='
             },

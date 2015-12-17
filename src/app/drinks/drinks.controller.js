@@ -6,7 +6,8 @@
         .controller('DrinksController', DrinksController);
 
     /** @ngInject */
-    function DrinksController(Drinks, AccessToken, $log, $uibModal) {
+    function DrinksController(Drinks, AccessToken, $uibModal) {
+
         var vm = this;
 
         vm.drinks = [];
@@ -27,8 +28,6 @@
             });
             modalInstance.result.then(function (drink) {
                 vm.drinks.push(drink);
-            }, function (response) {
-                $log.debug(response);
             });
         };
 
@@ -44,11 +43,6 @@
                         return drink;
                     }
                 }
-            });
-            modalInstance.result.then(function (response) {
-                $log.debug(response);
-            }, function (response) {
-                $log.debug(response);
             });
         };
     }

@@ -20,6 +20,12 @@
                 controller: 'DrinksController',
                 controllerAs: 'vm'
             })
+            .state('statistics', {
+                url: '/statistics',
+                templateUrl: 'app/statistics/statistics.html',
+                controller: 'StatisticsController',
+                controllerAs: 'vm'
+            })
             .state('registration', {
                 url: '/registration',
                 templateUrl: 'app/registration/registration.html',

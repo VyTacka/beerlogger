@@ -17,6 +17,7 @@
                 placeholder="Packaging Capacity"
                 name="packagingCapacity"
                 type="number"
+                addon="ml"
                 required="true"
                 value="vm.entity.packagingCapacity"
                 errors="vm.errors.packagingCapacity.errors">
@@ -35,6 +36,7 @@
                 placeholder="Packaging Price"
                 name="packagingPrice"
                 type="number"
+                addon="&euro;"
                 required="true"
                 value="vm.entity.packagingPrice"
                 errors="vm.errors.packagingPrice.errors">
@@ -44,6 +46,7 @@
                 placeholder="Alc. Volume"
                 name="alcVol"
                 type="number"
+                addon="%"
                 required="true"
                 value="vm.entity.alcVol"
                 errors="vm.errors.alcVol.errors">
@@ -51,7 +54,7 @@
         <div class="form-group" ng-class="{ 'has-error' : vm.errors.rating.errors }">
             <label for="input_rating" class="col-sm-3 control-label"></label>
             <div class="col-sm-9">
-                <input id="input_rating" type="hidden" ng-required="true">
+                <input id="input_rating" type="hidden" required="required">
                 <uib-rating ng-model="vm.entity.rating" max="10" on-hover="vm.rating.hoveringOver(value)"
                             on-leave="vm.rating.overStar = null" aria-labelledby="default-rating"></uib-rating>
                 <span class="label"

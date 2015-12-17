@@ -1,7 +1,13 @@
 <div class="form-group" ng-class="{ 'has-error' : vm.errors }">
     <label for="input_{{ vm.name | replace: '.': '_' }}" class="col-sm-3 control-label">{{ vm.label }}</label>
     <div class="col-sm-9">
-        <input type="{{ vm.type }}" class="form-control" id="input_{{ vm.name | replace: '.': '_' }}" ng-model="vm.value" placeholder="{{ vm.placeholder }}" ng-required="vm.required">
+        <div class="input-group" ng-if="vm.addon">
+            <input type="{{ vm.type }}" class="form-control" id="input_{{ vm.name | replace: '.': '_' }}"
+                   ng-model="vm.value" placeholder="{{ vm.placeholder }}" ng-required="vm.required">
+            <span class="input-group-addon">{{ vm.addon }}</span>
+        </div>
+        <input type="{{ vm.type }}" class="form-control" id="input_{{ vm.name | replace: '.': '_' }}"
+               ng-model="vm.value" placeholder="{{ vm.placeholder }}" ng-required="vm.required" ng-if="!vm.addon">
         <span class="help-block" ng-show="vm.errors">{{ vm.errors | join:'&lt;br&gt;' }}</span>
     </div>
 </div>
