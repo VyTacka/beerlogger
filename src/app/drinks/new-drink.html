@@ -52,7 +52,7 @@
                 errors="vm.errors.alcVol.errors">
         </bs-input>
         <div class="form-group" ng-class="{ 'has-error' : vm.errors.rating.errors }">
-            <label for="input_rating" class="col-sm-3 control-label"></label>
+            <label for="input_rating" class="col-sm-3 control-label">Rating</label>
             <div class="col-sm-9">
                 <input id="input_rating" type="hidden" required="required">
                 <uib-rating ng-model="vm.entity.rating" max="10" on-hover="vm.rating.hoveringOver(value)"
