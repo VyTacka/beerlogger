@@ -52,8 +52,11 @@
             <label for="input_rating" class="col-sm-3 control-label"></label>
             <div class="col-sm-9">
                 <input id="input_rating" type="hidden" ng-required="true">
-                <uib-rating ng-model="vm.entity.rating" max="10" on-hover="vm.rating.hoveringOver(value)" on-leave="vm.rating.overStar = null" aria-labelledby="default-rating"></uib-rating>
-                <span class="label" ng-class="{'label-warning': vm.rating.percent<30, 'label-info': vm.rating.percent>=30 && vm.rating.percent<70, 'label-success': vm.rating.percent>=70}" ng-show="vm.rating.overStar">{{vm.rating.percent}}%</span>
+                <uib-rating ng-model="vm.entity.rating" max="10" on-hover="vm.rating.hoveringOver(value)"
+                            on-leave="vm.rating.overStar = null" aria-labelledby="default-rating"></uib-rating>
+                <span class="label"
+                      ng-class="{'label-warning': vm.rating.percent<30, 'label-info': vm.rating.percent>=30 && vm.rating.percent<70, 'label-success': vm.rating.percent>=70}"
+                      ng-show="vm.rating.overStar">{{vm.rating.percent}}%</span>
                 <span class="help-block" ng-show="vm.errors.rating.errors">{{ vm.errors.rating.errors | join:'&lt;br&gt;' }}</span>
             </div>
         </div>
@@ -65,12 +68,14 @@
                 value="vm.entity.note"
                 errors="vm.errors.note.errors">
         </bs-textarea>
-
-        <dropzone value="vm.entity.image"></dropzone>
+        <dropzone
+                required="true"
+                value="vm.entity.image">
+        </dropzone>
     </form>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="vm.submit()">Save</button>
+    <button class="btn btn-primary" type="button" ng-click="vm.submit()" ng-disabled="drinkForm.$invalid">Save</button>
     <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
 </div>
 

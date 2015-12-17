@@ -14,12 +14,6 @@
                 controller: 'MainController',
                 controllerAs: 'vm'
             })
-            //.state('drink', {
-            //    url: '/drink',
-            //    templateUrl: 'app/drink/drink.html',
-            //    controller: 'DrinkController',
-            //    controllerAs: 'vm'
-            //})
             .state('drinks', {
                 url: '/drinks',
                 templateUrl: 'app/drinks/drinks.html',

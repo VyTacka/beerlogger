@@ -11,6 +11,7 @@
             restrict: 'E',
             templateUrl: 'app/components/dropzone/dropzone.html',
             scope: {
+                required: '@',
                 value: '='
             },
             controller: DropzoneController,

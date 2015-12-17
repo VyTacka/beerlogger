@@ -1,14 +1,31 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('beerLoggerApp')
-    .run(runBlock);
+    angular
+        .module('beerLoggerApp')
+        .run(alerts);
 
-  /** @ngInject */
-  function runBlock($log) {
+    /** @ngInject */
+    function alerts($rootScope, $timeout) {
 
-    $log.debug('runBlock end');
-  }
+        $rootScope.alerts = [];
+
+        $rootScope.alertClose = function (index) {
+            $rootScope.alerts.splice(index, 1);
+        };
+
+        $rootScope.$watch('alerts', function (newValue, oldValue) {
+
+            if (newValue.length > oldValue.length) {
+                angular.forEach(newValue, function (key, index) {
+                    if (-1 === oldValue.indexOf(key)) {
+                        $timeout(function () {
+                            newValue.splice(index, 1);
+                        }, 5000)
+                    }
+                });
+            }
+        }, true);
+    }
 
 })();

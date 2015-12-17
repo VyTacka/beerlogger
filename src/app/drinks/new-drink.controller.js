@@ -6,7 +6,7 @@
         .controller('NewDrinkController', NewDrinkController);
 
     /** @ngInject */
-    function NewDrinkController($scope, Drinks, AccessToken, $uibModalInstance, $log) {
+    function NewDrinkController($scope, Drinks, AccessToken, $uibModalInstance, $rootScope) {
         var vm = this;
 
         vm.rating = {};
@@ -24,6 +24,7 @@
                 Drinks.post({app_bundle_drink: vm.entity}, {access_token: AccessToken.get().access_token}).then(
                     function (response) {
                         $uibModalInstance.close(response.plain());
+                        $rootScope.alerts.push({ type: 'success', msg: 'Well done! You successfully added new drink.' });
                     },
                     function (error) {
                         vm.errors = error.data.errors.children;

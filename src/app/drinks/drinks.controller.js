@@ -14,7 +14,6 @@
         Drinks.getList({access_token: AccessToken.get().access_token}).then(
             function (response) {
                 vm.drinks = response.plain();
-                $log.debug(vm.drinks);
             }
         );
 
@@ -24,15 +23,9 @@
                 animation: true,
                 templateUrl: 'app/drinks/new-drink.html',
                 controller: 'NewDrinkController',
-                controllerAs: 'vm',
-                resolve: {
-                    drink: function () {
-                        return vm.drink;
-                    }
-                }
+                controllerAs: 'vm'
             });
             modalInstance.result.then(function (drink) {
-                $log.debug(drink);
                 vm.drinks.push(drink);
             }, function (response) {
                 $log.debug(response);

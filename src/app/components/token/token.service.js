@@ -6,7 +6,7 @@
         .factory('Token', Token);
 
     /** @ngInject */
-    function Token(Restangular, api_oauth, client_id, client_secret, $log) {
+    function Token(Restangular, api_oauth, client_id, client_secret) {
         var token = Restangular.allUrl('oauth', api_oauth + '/token');
 
         function get() {

@@ -27,7 +27,7 @@
         return directive;
 
         /** @ngInject */
-        function InputController($scope, $log) {
+        function InputController() {
         }
     }
 })();
