@@ -22,12 +22,15 @@
                             ui-sref="registration"
                             ng-show="!logged"
                             class="btn btn-default navbar-btn">Sign Up</button>
+                </li>
+                <li>
                     <oauth
                             site="http://api.beerlogger.tru.lt"
                             client-id="1_5qejn38rtukggw4w4ko0sk0okcgsk4c4s0g0cc8c40wcok0w4g"
                             redirect-uri="http://beerlogger.tru.lt"
                             profile-uri="http://api.beerlogger.tru.lt/api/user"
-                            authorize-path="/oauth/v2/auth">
+                            authorize-path="/oauth/v2/auth"
+                            template="app/components/navbar/oauth.html">
                     </oauth>
                 </li>
             </ul>
